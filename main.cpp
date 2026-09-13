@@ -52,20 +52,20 @@ int main (){
                 break;
             case 3:
                 cout<<"\nBuscar una cancion\n";
-                if (cantidadCanciones==0);{
-                    cout<< "No hay canciones registradas :(\n"
+                if (cantidadCanciones==0){
+                    cout<< "No hay canciones registradas :(\n";
                 }else{
                     string buscar;
                     cout<<"Ingresar la canción que desea buscar: "; 
                     cin>> buscar; 
                     bool encontrada = false;
                     for (int i = 0; i < cantidadCanciones; i++){
-                        if (nombres[i]==buscar);{
+                        if (nombres[i]==buscar){
                             cout<< " Encontramos tu canción :D!\n";
                             cout<< "Nombre: "<<nombres[i]<<endl; 
                             cout<< "Autor: "<<autores[i]<<endl;
                             cout<< "Visitas en Youtube: "<<visitas[i]<<endl; 
-                            encontrada=true:
+                            encontrada=true;
                         }   
                     }
                 }
@@ -91,25 +91,28 @@ int main (){
                 } 
                 break;
             case 5: 
-                cout<<"\nPlaylist para barrer la casa como alma depresiva\n";
-                if (cantidadCanciones==0){
-                    cout<< "No hay canciones registradas :(\n";
-                }else{
-                    int limiteVisitas = 1000000;
-                    bool existenExitos = false;
-                    cout<<"Buscando los hits mas populares para ti ;)...";
-                    for (int i = 0; i < cantidadCanciones; i++){
-                        if (visitas[i]>=limiteVisitas){
-                            cout<<" ♡ "<<nombres[i]<<" - "<<autores[i]<< "("<<visitas[i]<<" visitas)\n";
-                            existenExitos = true;
-                        }
-                        }
+            cout << "\nPlaylist para barrer la casa como alma depresiva\n";
+            if (cantidadCanciones == 0) {
+                cout << "No hay canciones registradas :(\n";
+            } else {
+                int limiteVisitas = 1000000;
+                bool hayExitos = false;
+
+                cout << "Buscando los hits mas populares para ti ;)...\n";
+
+                for (int i = 0; i < cantidadCanciones; i++) {
+                    if (visitas[i] >= limiteVisitas) {
+                        cout << " ♡ " << nombres[i] << " - " << autores[i] 
+                             << " (" << visitas[i] << " visitas)\n";
+                        hayExitos = true;
                     }
-                    if (!existenExitos)
-                    {
-                        cout<< "\nNo tienes canciones con mas de 1 millon de visitas en Youtube. !Registralo :D!\n"
-                    } 
-                break;
+                }
+
+                if (!hayExitos) {
+                    cout << "\nNo tienes canciones con mas de 1 millon de visitas en Youtube. !Registralo :D!\n";
+                }
+            }
+            break;
             case 6:
                 cout<< "\nSaliendo del Programa: Chao :D\n";
                 break;
