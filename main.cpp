@@ -1,35 +1,74 @@
-#incluide <iostream>
-#incluide <string> 
+#include <iostream>
+#include <string> 
 
 using namespace std;
 void mostrarMenu (){
-    cout << "============ SISTEMA DE GESTION DE MUSICA ============";<<endl;
+    cout << "============ SISTEMA DE GESTION DE MUSICA ============"<<endl;
     cout << "1. Registrar una canción" <<endl;
     cout << "2. Mostrar los registros de canciones"<<endl; 
     cout << "3. Buscar una canción "<<endl; 
     cout << "4. Mostrar reporte general"<<endl; 
     cout << "5. Playlist para barrer la casa como alma depresiva"<<endl; 
     cout << "6. Salir" <<endl;
-    cout << "seleccione una opción: "<<endl;
+    cout << "seleccione una opción: ";
+} 
 
-    int main (){
-        string nombres [20];
-        float duraciones [20]; 
-        int cantidadCanciones = 0;
-        int opcion = 0; 
-        do {
-            mostrarMenu ();
-            cin >> opcion; 
+int main (){
+    string nombres [20];
+    string autores [20];
+    int visitas [20];  
+    int cantidadCanciones = 0;
+    int opcion = 0; 
+    do {
+        mostrarMenu ();
+        cin >> opcion; 
 
-            switch (opcion){
+        switch (opcion){
             case 1:
-                cout<<"\nRegistrar cancion\n";
+                cout << "\nRegistrar cancion\n";
+                if (cantidadCanciones == 20) {
+                cout << "El catalogo esta lleno. Max 20 canciones." << endl;
+                } else {
+                cout << "Colocar el nombre de la cancion: "; 
+                cin >> nombres[cantidadCanciones];
+                cout << "Colocar el autor de la cancion: ";        
+                cin >> autores[cantidadCanciones];
+                cout << "Colocar las visitas en Youtube de la cancion: ";
+                cin >> visitas[cantidadCanciones];
+                cantidadCanciones++;
+                }
                 break;
             case 2: 
-                cout<<"\nMostrar los registros de canciones\n";
+                cout<<"\nRegistros de canciones\n"; 
+                if (cantidadCanciones ==0){
+                    cout<<"No hay canciones registradas :(\n"; 
+                }else{
+                    for (int i = 0; i < cantidadCanciones; i++){
+                        cout (i+1)<<"*"<<nombres[i];
+                        cout<<"-"<<autores[i];
+                        cout<<"("<<visitas[i]<<"visitas en Youtube\n)"; 
+                    }
+                }
                 break;
             case 3:
                 cout<<"\nBuscar una cancion\n";
+                if (cantidadCanciones==0);{
+                    cout<< "No hay canciones registradas :(\n"
+                }else{
+                    string buscar;
+                    cout<<"Ingresar la canción que desea buscar: "; 
+                    cin>> buscar; 
+                    bool encontrada = false;
+                    for (int i = 0; i < cantidadCanciones; i++){
+                        if (nombres=busqueda);{
+                            cout<< " Encontramos tu canción :D!\n";
+                            cout<< "Nombre: "<<nombres[i]<<endl; 
+                            cout<<"Autor: "<<autores[i]<<endl;
+                            cout<<"Visitas en Youtube: "<<visitas[i]<<endl; 
+                            encontrada=true:
+                        }   
+                    }
+                }
                 break;
             case 4:
                 cout<<"\nReporte general\n";
@@ -44,8 +83,7 @@ void mostrarMenu (){
                 cout<< "\nOpcion invalida. Por favor intente de nuevo\n";
                 break;
             }
-        }while (opcion !=6)
-        
-        return 0;
-    }
+    }while (opcion !=6);
+
+    return 0;
 }
