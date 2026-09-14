@@ -27,15 +27,15 @@ int main (){
             case 1:
                 cout << "\nRegistrar cancion\n";
                 if (cantidadCanciones == 20) {
-                cout << "El catalogo esta lleno. Max 20 canciones." << endl;
+                    cout << "El catalogo esta lleno. Max 20 canciones." << endl;
                 } else {
-                cout << "Colocar el nombre de la cancion: "; 
-                cin >> nombres[cantidadCanciones];
-                cout << "Colocar el autor de la cancion: ";        
-                cin >> autores[cantidadCanciones];
-                cout << "Colocar las visitas en Youtube de la cancion: ";
-                cin >> visitas[cantidadCanciones];
-                cantidadCanciones++;
+                    cout << "Colocar el nombre de la cancion: ";
+                    cin >> nombres[cantidadCanciones];
+                    cout << "Colocar el autor de la cancion: ";
+                    cin >> autores[cantidadCanciones];
+                    cout << "Colocar las visitas en Youtube de la cancion: ";
+                    cin >> visitas[cantidadCanciones];
+                    cantidadCanciones++;
                 }
                 break;
             case 2: 
